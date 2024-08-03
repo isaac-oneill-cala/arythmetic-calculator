@@ -1,0 +1,59 @@
+# Function to add two numbers
+def add(x, y):
+    return x + y
+
+# Function to subtract two numbers
+def subtract(x, y):
+    return x - y
+
+# Function to multiply two numbers
+def multiply(x, y):
+    return x * y
+
+# Function to divide two numbers
+def divide(x, y):
+    # Check if the divisor is zero to avoid division by zero error
+    if y != 0:
+        return x / y
+    else:
+        return "Error: Division by zero is not allowed."
+
+# Main function where the program execution begins
+def main():
+    # Display the available operations
+    print("Select operation:")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+
+    # Take input from the user for operation choice
+    choice = input("Enter choice(1/2/3/4): ")
+
+    # Check if the chosen operation is valid
+    if choice in ('1', '2', '3', '4'):
+        # Take input from the user for the two operands
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+
+        # Perform the appropriate operation based on user choice
+        if choice == '1':
+            print(f"{num1} + {num2} = {add(num1, num2)}")
+
+        elif choice == '2':
+            print(f"{num1} - {num2} = {subtract(num1, num2)}")
+
+        elif choice == '3':
+            print(f"{num1} * {num2} = {multiply(num1, num2)}")
+
+        elif choice == '4':
+            result = divide(num1, num2)
+            print(f"{num1} / {num2} = {result}")
+
+    else:
+        # Display an error message if the choice is invalid
+        print("Invalid input")
+
+# Call the main function to execute the program
+if __name__ == "__main__":
+    main()
