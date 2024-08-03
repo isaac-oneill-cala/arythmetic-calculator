@@ -1,0 +1,51 @@
+#include <iostream> // Include the iostream library for input and output
+
+using namespace std; // Use the standard namespace to avoid prefixing std::
+
+// Main function where the program execution begins
+int main() {
+
+    char op; // Variable to store the operator
+    double num1, num2, result; // Variables to store the two operands and the result
+
+    
+    cout << "Enter an operator (+, -, *, /): "; // Prompt the user to enter an arithmetic operator
+    cin >> op; // Read the operator from user input
+
+
+    cout << "Enter two operands: "; // Prompt the user to enter two operands
+    cin >> num1 >> num2; // Read the two operands from user input
+
+    // Use a switch-case construct to handle different arithmetic operations based on the operator
+    switch(op) {
+        case '+': // If the operator is '+'
+            result = num1 + num2; // Perform addition
+            cout << num1 << " + " << num2 << " = " << result << endl; // Display the result
+            break; // Exit the switch-case block
+
+        case '-': // If the operator is '-'
+            result = num1 - num2; // Perform subtraction
+            cout << num1 << " - " << num2 << " = " << result << endl; // Display the result
+            break; // Exit the switch-case block
+
+        case '*': // If the operator is '*'
+            result = num1 * num2; // Perform multiplication
+            cout << num1 << " * " << num2 << " = " << result << endl; // Display the result
+            break; // Exit the switch-case block
+
+        case '/': // If the operator is '/'
+            if (num2 != 0) { // Check if the divisor is not zero to avoid division by zero error
+                result = num1 / num2; // Perform division
+                cout << num1 << " / " << num2 << " = " << result << endl; // Display the result
+            } else {
+                cout << "Error: Division by zero is not allowed." << endl; // Display error message
+            }
+            break; // Exit the switch-case block
+
+        default: // If the operator is none of the above
+            cout << "Error: Invalid operator." << endl; // Display error message
+            break; // Exit the switch-case block
+    }
+
+    return 0; // Return 0 to indicate successful execution of the program
+}
